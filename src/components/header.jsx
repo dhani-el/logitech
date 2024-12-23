@@ -1,6 +1,6 @@
 
 
-import logo from "../assets/Logitech_logo.png"
+import logo from "../assets/logo_Logitech.png"
 
 const links = [
     {
@@ -22,7 +22,7 @@ const links = [
 ]
 
 export default function Header(){
-    return <div>
+    return <div className="w-full flex justify-between py-4">
                 <Logo/>
                 <NavLinks links={links}/>
            </div>
@@ -30,16 +30,16 @@ export default function Header(){
 
 
 function Logo(){
-    return <div>
-                <img src={logo}/>
+    return <div className="landscape:w-[8%]">
+                <img src={logo} className="w-full "/>
             </div>
 }
 
 function NavLinks({links=[]}){
-    return <div>
+    return <div className="w-[40%] flex justify-start gap-6">
                 {
                     links.map(link=>{
-                        return <a href={link?.url}>{link?.title}</a>
+                        return <a href={link?.url} className="text-white">{link?.title}</a>
                     })
                 }
     </div>
