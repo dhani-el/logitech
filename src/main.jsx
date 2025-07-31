@@ -3,10 +3,13 @@ import { createRoot } from 'react-dom/client'
 import Home from './Home'
 import  "../public/service-worker-registration"
 import  "./index.css"
+import { Canvas } from '@react-three/fiber'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Home/>
+    <Canvas>
+      <Home/>
+    </Canvas>
   </StrictMode>,
 );
 
