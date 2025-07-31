@@ -6,3 +6,4 @@ export default function VerticalLine({width,height,color,top,left,right,bottom})
 
     </div>
 }
+
