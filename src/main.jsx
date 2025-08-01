@@ -7,7 +7,10 @@ import { Canvas } from '@react-three/fiber'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Canvas>
+    <Canvas
+    orthographic
+      camera={{fov:45,position:[3,2,6],near:0.1,far:200,zoom:100}}
+    >
       <Home/>
     </Canvas>
   </StrictMode>,

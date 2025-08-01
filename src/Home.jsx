@@ -1,9 +1,17 @@
 import { useFrame,useThree } from "@react-three/fiber";
 import { useRef } from "react";
 
+import CustomObject from "./customObject";
+
 export default function Home(){
     const groupRef = useRef();
-    const {camera,gl,} = useThree()
+    // const {camera,gl,} = useThree();
+    useFrame((state)=>{
+        // const angle = state.clock.elapsedTime;
+        // state.camera.position.x = Math.sin(angle) * 8
+        // state.camera.position.z = Math.cos(angle) * 8
+        // state.camera.lookAt(0,0,0)
+    })
 
 
     return (
@@ -14,6 +22,7 @@ export default function Home(){
                         <ASphere/>
                         <ABox/>
                     </group>
+                    <CustomObject/>
                     <Floor/>
                 </>
     )
