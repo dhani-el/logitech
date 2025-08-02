@@ -1,11 +1,11 @@
-import { useFrame,useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { OrbitControls,TransformControls } from "@react-three/drei";
 
 import CustomObject from "./customObject";
 
 export default function Home(){
     const groupRef = useRef();
-    // const {camera,gl,} = useThree();
     useFrame((state)=>{
         // const angle = state.clock.elapsedTime;
         // state.camera.position.x = Math.sin(angle) * 8
@@ -16,6 +16,7 @@ export default function Home(){
 
     return (
                 <>
+                    <OrbitControls/>
                     <directionalLight position={[1,2,3]} intensity={1} />
                     <ambientLight intensity={0.5} />
                     <group ref={groupRef} >
@@ -39,10 +40,14 @@ function ASphere(){
 function ABox(){
 
 
-    return <mesh scale={1.2}>
-                <boxGeometry />
-                <meshStandardMaterial color={"mediumpurple"}/>
-    </mesh>
+    return  <TransformControls>
+                <mesh scale={1.2}>
+                            <boxGeometry />
+                            <meshStandardMaterial color={"mediumpurple"}/>
+                </mesh>
+            </TransformControls>
+
+
 }
 
 function Floor(){
