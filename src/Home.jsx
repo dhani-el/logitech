@@ -40,12 +40,22 @@ function ASphere(){
 function ABox(){
 
 
-    return  <TransformControls>
-                <mesh scale={1.2}>
-                            <boxGeometry />
-                            <meshStandardMaterial color={"mediumpurple"}/>
+    // return  <TransformControls>
+    //             <mesh scale={1.2}>
+    //                         <boxGeometry />
+    //                         <meshStandardMaterial color={"mediumpurple"}/>
+    //             </mesh>
+    //         </TransformControls>
+
+    const cube = useRef()
+
+    return  <>
+                <mesh ref={cube} scale={1.2}>
+                    <boxGeometry />
+                    <meshStandardMaterial color={"mediumpurple"}/>
                 </mesh>
-            </TransformControls>
+                <TransformControls object={cube} />
+            </>
 
 
 }
